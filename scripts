@@ -1,0 +1,56 @@
+#Scripts DNS
+# Configuración de zona
+/*Zona hacia adelante*/
+zone "julianYjuan.com" {
+        type master;
+        file "/etc/bind/db.julianYjuan.com";
+};
+
+
+
+# Configuracion del archivo de la zona directa
+$TTL    604800
+@       IN      SOA     julianYjuan.com. root.julianYjuan.com. (
+                              2         ; Serial
+                         604800         ; Refresh
+                          86400         ; Retry
+                        2419200         ; Expire
+                         604800 )       ; Negative Cache TTL
+;
+@       IN      NS      ns.julianYjuan.com.
+ns      IN      A       192.168.50.3
+parcial IN      CNAME   ns
+www     IN      CNAME   ns
+
+---------------------------------------------------------------------------------------------------------------------------------------------------
+
+#Scripts HTTP
+#Archivo html del parcial 1 de servicios
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Servidor Parcial</title>
+</head>
+<body>
+
+<h1>Este es el servidor del Parcial 1 de servicios telematicos</h1>
+<p>Funciona!</p>
+<img src="/var/www/parcial/ejemplo2.jpg" alt="Imagen servicios">
+
+</body>
+</html>
+
+#Configuracion del host virtual
+<VirtualHost *:80>
+        ServerName www.julianYjuan.com
+	ServerName parcial.julianYjuan.com
+        DocumentRoot /var/www/parcial
+</VirtualHost>
+
+#Aqui va todo lo de mod_deflate para la compresión de archivos en un servidor
+
+<IfModule mod_deflate.c>
+        AddOutputFilterByType DEFLATE image/jpeg
+        AddOutputFilterByType DEFLATE video/x-msvideo
+        AddOutputFilterByType DEFLATE video/quicktime
+</IfModule>
