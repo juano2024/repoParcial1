@@ -50,7 +50,10 @@ www     IN      CNAME   ns
 #Aqui va todo lo de mod_deflate para la compresión de archivos en un servidor
 
 <IfModule mod_deflate.c>
-        AddOutputFilterByType DEFLATE image/jpeg
-        AddOutputFilterByType DEFLATE video/x-msvideo
-        AddOutputFilterByType DEFLATE video/quicktime
+        <IfModule mod_filter.c>
+                AddOutputFilterByType DEFLATE image/jpeg
+                AddOutputFilterByType DEFLATE image/jpg
+                AddOutputFilterByType DEFLATE video/x-msvideo
+                AddOutputFilterBytype DEFLATE video/quicktime
+        </IfModule>
 </IfModule>
