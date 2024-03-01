@@ -35,7 +35,7 @@ www     IN      CNAME   ns
 
 <h1>Este es el servidor del Parcial 1 de servicios telematicos</h1>
 <p>Funciona!</p>
-<img src="/var/www/parcial/ejemplo2.jpg" alt="Imagen servicios">
+
 
 </body>
 </html>
