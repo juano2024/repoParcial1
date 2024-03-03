@@ -57,3 +57,7 @@ www     IN      CNAME   ns
                 AddOutputFilterBytype DEFLATE video/quicktime
         </IfModule>
 </IfModule>
+
+#Verficacion de compresion de imagen o archivo 
+curl -H "Accept-Encoding: gzip" -I http://parcial.julianYjuan.com/ejemplo2.jpg
+
