@@ -60,4 +60,9 @@ www     IN      CNAME   ns
 
 #Verficacion de compresion de imagen o archivo 
 curl -H "Accept-Encoding: gzip" -I http://parcial.julianYjuan.com/ejemplo2.jpg
+----------------------------------------------------------------------------------------------------------------------------------------------------
+#Ruta local de ngrok
+C:\Users\Juan Ospina\Desktop\Prueba\ngrok-v3-stable-windows-amd64>
 
+#Creacion de tunel con ngrok 
+ngrok http 192.168.50.3:80 
