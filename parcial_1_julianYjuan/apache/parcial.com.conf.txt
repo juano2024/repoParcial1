@@ -1,0 +1,5 @@
+<VirtualHost *:80>
+	ServerName www.julianYjuan.com
+	ServerName parcial.julianYjuan.com
+	DocumentRoot /var/www/parcial
+</VirtualHost>
